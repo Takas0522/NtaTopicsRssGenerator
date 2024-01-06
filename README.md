@@ -2,7 +2,7 @@
 
 国税庁の[トピックス一覧](https://www.nta.go.jp/information/news/index.htm)をRSS化するツールです。
 
-RSSのXMLは<s>[こちら]()</s>（準備中）に格納しています。
+RSSのXMLは[こちら](https://stntrg.z11.web.core.windows.net/rss.rdf)に格納しています。
 
 ※個人作成ツールなので自己責任の元でご利用ください。
 
