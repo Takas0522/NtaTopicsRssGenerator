@@ -6,7 +6,7 @@
     "NTA_ORIGIN": "https://www.nta.go.jp",
     "NTA_ENDPOINT": "/information/news/index.htm",
     "CONTAINER_NAME": "rss-feed",
-    "BLOB_NAME": "rss.xml",
+    "BLOB_NAME": "rss.rdf",
     "BLOB_ENDPOINT": "https://<blobname>.blob.core.windows.net"
   },
   "ConnectionStrings": {
