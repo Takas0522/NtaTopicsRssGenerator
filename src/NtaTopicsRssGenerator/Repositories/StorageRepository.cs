@@ -14,7 +14,7 @@ namespace NtaTopicsRssGenerator.Repositories
     {
         private readonly BlobServiceClient _client;
         private readonly string _blobContainerName = "rss-feed";
-        private readonly string _blobName = "rss.xml";
+        private readonly string _blobName = "rss.rdf";
 
         public StorageRepository(
             BlobServiceClient client,
