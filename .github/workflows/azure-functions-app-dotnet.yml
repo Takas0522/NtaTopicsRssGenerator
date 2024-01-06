@@ -38,7 +38,7 @@ jobs:
       shell: pwsh # For Linux, use bash
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/NtaTopicsRssGenerator'
-        dotnet publish --configuration Release
+        dotnet build --configuration Release
         popd
 
     - name: 'Run Azure Functions Action'
@@ -46,4 +46,4 @@ jobs:
       id: fa
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/NtaTopicsRssGenerator/obj/Release/net6.0'
+        package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/NtaTopicsRssGenerator/bin/Release/net6.0'
