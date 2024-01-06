@@ -6,8 +6,8 @@ on:
     branches: ["main", "feature/*"]
 
 permissions:
-      id-token: write
-      contents: read
+  id-token: write
+  contents: read
 
 env:
   AZURE_FUNCTIONAPP_NAME: 'func-nta-topics-rss-generator'
