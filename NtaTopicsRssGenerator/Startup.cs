@@ -22,13 +22,13 @@ namespace NtaTopicsRssGenerator
         public override void Configure(IFunctionsHostBuilder builder)
         {
             var configuration = builder.Services.BuildServiceProvider().GetService<IConfiguration>();
-            builder.Services.AddSingleton<NtaTopicsRepository>();
+            builder.Services.AddSingleton<INtaTopicsRepository, NtaTopicsRepository>();
             builder.Services.AddSingleton<NtaTopicsService>();
             builder.Services.AddAzureClients(builder =>
             {
                 builder.AddBlobServiceClient(configuration.GetConnectionString("BlobStorage"));
             });
-            builder.Services.AddSingleton<StorageRepository>();
+            builder.Services.AddSingleton<IStorageRepository, StorageRepository>();
         }
     }
 }

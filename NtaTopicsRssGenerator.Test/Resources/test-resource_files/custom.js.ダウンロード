@@ -1,0 +1,33 @@
+$(document).ready(function() {
+	var lang = document.documentElement.getAttribute('lang')
+	$('h3.sidenavi-title a').on('click',function(){
+		if (lang == 'ja') {
+			if ($(this).hasClass('collapsed') && $(this).find('img').attr('src') == '/template/img/template/navi_down.png') {
+				$(this).find('img').attr("src", "/template/img/template/navi_up.png");
+				$(this).find('img').attr("alt", "\u30e1\u30cb\u30e5\u30fc\u3092\u9589\u3058\u308b");
+			} else {
+				$(this).find('img').attr("src", "/template/img/template/navi_down.png");
+				$(this).find('img').attr("alt", "\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f");
+			}
+		} else if (lang == 'en') {
+			if ($(this).hasClass('collapsed')) {
+				$(this).find('img').attr("src", "/template/img/template/navi_up.png");
+				$(this).find('img').attr("alt", "menu close");
+			} else {
+				$(this).find('img').attr("src", "/template/img/template/navi_down.png");
+				$(this).find('img').attr("alt", "menu open");
+			}
+		}
+	});
+});
+jQuery(document).ready(function ($) {
+    $('.dropdown-toggle').click(function(e) {
+        // 要素で親メニューリンクとドロップダウンメニュー表示を切り分ける
+        if ($(e.target).hasClass('dlink-menu')) {
+            var location = $(this).attr('href');
+            window.location.href = location;
+            return false;
+        }
+        return true;
+    });
+});

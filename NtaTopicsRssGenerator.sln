@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtaTopicsRssGenerator", "NtaTopicsRssGenerator\NtaTopicsRssGenerator.csproj", "{C1325E78-1C1A-4B29-A443-C8EEDBC2D748}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NtaTopicsRssGenerator", "NtaTopicsRssGenerator\NtaTopicsRssGenerator.csproj", "{C1325E78-1C1A-4B29-A443-C8EEDBC2D748}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtaTopicsRssGenerator.Test", "NtaTopicsRssGenerator.Test\NtaTopicsRssGenerator.Test.csproj", "{B24FA193-1E4A-4631-BBE8-F56979C1E57B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C1325E78-1C1A-4B29-A443-C8EEDBC2D748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1325E78-1C1A-4B29-A443-C8EEDBC2D748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1325E78-1C1A-4B29-A443-C8EEDBC2D748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24FA193-1E4A-4631-BBE8-F56979C1E57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24FA193-1E4A-4631-BBE8-F56979C1E57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24FA193-1E4A-4631-BBE8-F56979C1E57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24FA193-1E4A-4631-BBE8-F56979C1E57B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

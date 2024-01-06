@@ -8,9 +8,9 @@ namespace NtaTopicsRssGenerator.Models
 {
     public class NtaTopic
     {
-        public string Id { get; set; }
-        public DateTime PublishDate { get; set; }
-        public string Title { get; set; }
-        public Uri TopicPage { get; set; }
+        public string Id { get; set; } = "";
+        public DateTime PublishDate { get; set; } = DateTime.MinValue;
+        public string Title { get; set; } = "";
+        public Uri? TopicPage { get; set; }
     }
 }

@@ -1,0 +1,64 @@
+$(function(){
+	var lang = document.documentElement.getAttribute('lang');
+	var path = location.pathname;
+	var header_html = '/template/html/header.html';
+	var footer_html = '/template/html/footer.html';
+	if (lang === 'en') {
+		header_html = '/template/html/header_en.html';
+		footer_html = '/template/html/footer_en.html';
+	}
+	var lastCode = null;
+	var shift = 0;
+	$.ajaxSetup({
+		beforeSend: function(xhr){
+			xhr.overrideMimeType("text/html;charset=utf-8");
+		}
+	});
+	$("#header").load(header_html, null, function() {
+		if (path.match(/webtaxtv/)) {
+			$("#logo img").unwrap();
+		}
+		if (path.match(/taxes\/tetsuzuki\/shinsei\/annai\/yousiki\.htm/) || path.match(/taxes\/shiraberu\/taxanswer\/index2\.htm/) || path.match(/suggestion\/taxanser\/input_form.html/) || path.match(/suggestion\/taxanser\/confirm_form.html/) || path.match(/suggestion\/taxanser\/complete_form.html/) || path.match(/suggestion\/cgi-bin\/SuggestionConfirm.php/) || path.match(/suggestion\/cgi-bin\/SuggestionComplete.php/) ||         
+        path.match(/taxes\/shiraberu\/taxanswer\/navi\/navi\.htm/)) {
+			$("header div#srchBox").remove();
+		}
+		$('ul.dropdown-menu li:last-child a').on('blur', function() {
+			if (lastCode == 9 && shift == 0) {
+				$('li.dropdown').removeClass('open');
+			}
+			lastCode = null;
+			shift = 0;
+		});
+		$('ul.dropdown-menu li:last-child a').on ('keydown', function(e){
+			event = e || window.e;
+			lastCode = event.keyCode || event.which;
+			if (event.shiftKey) { shift = 1; }
+		});
+		$('ul.dropdown-menu li:last-child a').on('onkeyup', function(){
+			lastCode = null;
+			shift = 0;
+		});
+		$('li.dropdown a.dropdown-toggle').on('keydown', function(e) {
+			if (e.keyCode === 9 && e.shiftKey) {
+				$('li.dropdown').removeClass('open');
+			}
+		});
+		$('li.dropdown a.dropdown-toggle').on('focus', function(e) {
+		$(this).parent().find('li').addClass('open');
+		});
+		$('li.dropdown a.dropdown-toggle').on('mousedown', function(e) {
+			location.href = $(this).attr('href');
+		});
+	});
+	$("#footer").load(footer_html);
+});
+$(window).load(function(){
+	var lang = document.documentElement.getAttribute('lang');
+	if (lang === 'ja') {
+		$('.gsc-search-button-v2').attr('alt', '\u691c\u7d22');
+		$('.gsc-search-button-v2').attr('title', '\u30b5\u30a4\u30c8\u5185\u691c\u7d22\u3092\u5b9f\u884c');
+	} else {
+		$('.gsc-search-button-v2').attr('alt', 'Search');
+		$('.gsc-search-button-v2').attr('title', 'Perform in-site search');
+	}
+});

@@ -20,10 +20,15 @@ namespace NtaTopicsRssGenerator
 
         [FunctionName("Generate")]
         [FixedDelayRetry(3, "00:01:00")]
-        public async Task Run([TimerTrigger("0 0 0 * * *", RunOnStartup = true)]TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 0 */6 * * *"
+#if DEBUG
+            ,RunOnStartup = true
+#endif
+        )]TimerInfo myTimer, ILogger log)
         {
+            log.LogInformation($"C# Timer trigger function executing at: {DateTime.Now}");
+            await _service.GenerateRssAsync();
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-            await _service.GenerateRss();
         }
     }
 }
