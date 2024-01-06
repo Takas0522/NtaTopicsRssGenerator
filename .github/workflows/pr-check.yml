@@ -2,15 +2,11 @@ name: Deploy
 
 on:
   workflow_dispatch:
-  push:
-    branches: ["main"]
-
-permissions:
-  id-token: write
-  contents: read
+  pull_request:
+    branches:
+      - main
 
 env:
-  AZURE_FUNCTIONAPP_NAME: 'func-nta-topics-rss-generator'
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'src'
   DOTNET_VERSION: '6.0.x'
 
@@ -30,13 +26,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-nuget
 
-    - name: Login Azure CLI
-      uses: azure/login@v1
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
     - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
       uses: actions/setup-dotnet@v3
       with:
@@ -45,13 +34,7 @@ jobs:
     - name: 'Resolve Project Dependencies Using Dotnet'
       shell: pwsh # For Linux, use bash
       run: |
-        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/NtaTopicsRssGenerator'
-        dotnet build --configuration Release
-        popd
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        dotnet build
+        dotnet test --logger trx
 
-    - name: 'Run Azure Functions Action'
-      uses: Azure/functions-action@v1
-      id: fa
-      with:
-        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/NtaTopicsRssGenerator/bin/Release/net6.0'

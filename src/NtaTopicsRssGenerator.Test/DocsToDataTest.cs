@@ -20,7 +20,7 @@ namespace NtaTopicsRssGenerator.Test
         }
 
         [Fact]
-        public void HTML‚©‚çTopicsƒf[ƒ^‚ğì¬‚·‚é‚±‚Æ‚ª‚Å‚«‚é‚±‚Æ()
+        public void HTMLã‹ã‚‰Topicsãƒ‡ãƒ¼ã‚¿ã‚’ä½œæˆã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã“ã¨()
         {
             var html = File.ReadAllText("./Resources/test-resource.html", System.Text.Encoding.UTF8);
             var parser = new HtmlParser();
@@ -30,28 +30,28 @@ namespace NtaTopicsRssGenerator.Test
             Assert.NotNull(resData);
 
             // Title
-            var titleExists = resData.Where(w => w.Title == "u—ß˜a‚T”N•ª@Šm’è\“ÁWv‚ğŠJİ‚µ‚Ü‚µ‚½").Any();
-            Assert.True(titleExists, "‘Å’¡‚ÌƒgƒsƒbƒNƒXˆê——HTML‚Ìƒ^ƒCƒgƒ‹‚ªtitleƒpƒ‰ƒ[ƒ^‚Æ‚È‚é‚±‚Æ");
+            var titleExists = resData.Where(w => w.Title == "ã€Œä»¤å’Œï¼•å¹´åˆ†ã€€ç¢ºå®šç”³å‘Šç‰¹é›†ã€ã‚’é–‹è¨­ã—ã¾ã—ãŸ").Any();
+            Assert.True(titleExists, "å›½ç¨åºã®ãƒˆãƒ”ãƒƒã‚¯ã‚¹ä¸€è¦§HTMLã®ã‚¿ã‚¤ãƒˆãƒ«ãŒtitleãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ãªã‚‹ã“ã¨");
 
             // Id
             var idExists = resData.Where(w => w.Id == "a0023012-266").Any();
-            Assert.True(idExists, "‘Å’¡‚ÌƒgƒsƒbƒNƒXˆê——HTML‚Ìid‚ªidƒpƒ‰ƒ[ƒ^‚Æ‚È‚é‚±‚Æ");
+            Assert.True(idExists, "å›½ç¨åºã®ãƒˆãƒ”ãƒƒã‚¯ã‚¹ä¸€è¦§HTMLã®idãŒidãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ãªã‚‹ã“ã¨");
 
             // LinkUrl
             var linkText = resData.Where(w => w.TopicPage != null && w.TopicPage.ToString().Contains("/taxes/shiraberu/shinkoku/tokushu/index.htm"));
             var linkExists = linkText.Any();
-            Assert.True(linkExists, "‘Å’¡‚ÌƒgƒsƒbƒNƒXˆê——HTML‚Ìƒ^ƒCƒgƒ‹‚ÌƒŠƒ“ƒNæ‚ªtopicPageƒpƒ‰ƒ[ƒ^‚Æ‚È‚é‚±‚Æ");
+            Assert.True(linkExists, "å›½ç¨åºã®ãƒˆãƒ”ãƒƒã‚¯ã‚¹ä¸€è¦§HTMLã®ã‚¿ã‚¤ãƒˆãƒ«ã®ãƒªãƒ³ã‚¯å…ˆãŒtopicPageãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ãªã‚‹ã“ã¨");
 
             var originExists = linkText?.First()?.TopicPage?.OriginalString.Contains("https://www.nta.go.jp");
-            Assert.True(linkExists, "‘Å’¡‚ÌƒgƒsƒbƒNƒXˆê——HTML‚Ìƒ^ƒCƒgƒ‹‚ÌƒŠƒ“ƒNæ‚Éorigin‚ª•t—^‚³‚ê‚Ä‚¢‚é‚±‚Æ");
+            Assert.True(linkExists, "å›½ç¨åºã®ãƒˆãƒ”ãƒƒã‚¯ã‚¹ä¸€è¦§HTMLã®ã‚¿ã‚¤ãƒˆãƒ«ã®ãƒªãƒ³ã‚¯å…ˆã«originãŒä»˜ä¸ã•ã‚Œã¦ã„ã‚‹ã“ã¨");
 
             // PublishDate
             var publishDateExists = resData.Where(w => w.PublishDate == new DateTime(2024, 1, 4, 0, 0, 0)).Any();
-            Assert.True(publishDateExists, "‘Å’¡‚ÌƒgƒsƒbƒNƒXˆê——HTML‚Ì“ú•t‚ªpublishDateƒpƒ‰ƒ[ƒ^‚Æ‚È‚é‚±‚Æ");
+            Assert.True(publishDateExists, "å›½ç¨åºã®ãƒˆãƒ”ãƒƒã‚¯ã‚¹ä¸€è¦§HTMLã®æ—¥ä»˜ãŒpublishDateãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ãªã‚‹ã“ã¨");
         }
 
         [Fact]
-        public void HTML“à‚ÉŠY“–Class‚ª‘¶İ‚µ‚È‚¢ê‡‹ó”z—ñ‚ª•Ô‹p‚³‚ê‚é‚±‚Æ()
+        public void HTMLå†…ã«è©²å½“ClassãŒå­˜åœ¨ã—ãªã„å ´åˆç©ºé…åˆ—ãŒè¿”å´ã•ã‚Œã‚‹ã“ã¨()
         {
             var html = File.ReadAllText("./Resources/class-not-exists.html", System.Text.Encoding.UTF8);
             var parser = new HtmlParser();
@@ -61,7 +61,7 @@ namespace NtaTopicsRssGenerator.Test
         }
 
         [Fact]
-        public void HTML“à‚ÌŠY“–Class“à‚Étrs‚ª‘¶İ‚µ‚È‚¢ê‡‹ó”z—ñ‚ª•Ô‹p‚³‚ê‚é‚±‚Æ()
+        public void HTMLå†…ã®è©²å½“Classå†…ã«trè¡ŒãŒå­˜åœ¨ã—ãªã„å ´åˆç©ºé…åˆ—ãŒè¿”å´ã•ã‚Œã‚‹ã“ã¨()
         {
             
             var html = File.ReadAllText("./Resources/tr-not-exists.html", System.Text.Encoding.UTF8);
@@ -74,41 +74,41 @@ namespace NtaTopicsRssGenerator.Test
 
         public static TheoryData<string, DateTime> TestCase =
             new TheoryData<string, DateTime>() {
-                { "—ß˜a6”N1Œ6“ú", new DateTime(2024, 1, 6, 0, 0, 0) },
-                { "—ß˜aŒ³”N5Œ1“ú", new DateTime(2019, 5, 1, 0, 0, 0) },
-                { "•½¬31”N4Œ30“ú", new DateTime(2019, 4, 30, 0, 0, 0) },
-                { "•½¬Œ³”N1Œ8“ú", new DateTime(1989, 1, 8, 0, 0, 0) },
-                { "º˜a64”N1Œ7“ú", new DateTime(1989, 1, 7, 0, 0, 0) }
+                { "ä»¤å’Œ6å¹´1æœˆ6æ—¥", new DateTime(2024, 1, 6, 0, 0, 0) },
+                { "ä»¤å’Œå…ƒå¹´5æœˆ1æ—¥", new DateTime(2019, 5, 1, 0, 0, 0) },
+                { "å¹³æˆ31å¹´4æœˆ30æ—¥", new DateTime(2019, 4, 30, 0, 0, 0) },
+                { "å¹³æˆå…ƒå¹´1æœˆ8æ—¥", new DateTime(1989, 1, 8, 0, 0, 0) },
+                { "æ˜­å’Œ64å¹´1æœˆ7æ—¥", new DateTime(1989, 1, 7, 0, 0, 0) }
             };
 
         [Theory]
         [MemberData(nameof(TestCase))]
-        public void ˜a—ï¼—ï•ÏŠ·‚ª³‚µ‚­s‚í‚ê‚é‚±‚Æ(string eraDate, DateTime date)
+        public void å’Œæš¦è¥¿æš¦å¤‰æ›ãŒæ­£ã—ãè¡Œã‚ã‚Œã‚‹ã“ã¨(string eraDate, DateTime date)
         {
             var res = _ntaTopicsService.EraToDate(eraDate);
             Assert.Equal(date, res);
         }
 
         [Fact]
-        public void ‘¶İ‚µ‚È‚¢˜a—ï‚ªw’è‚³‚ê‚½ê‡‚ÍMinDate‚ªw’è‚³‚ê‚é‚±‚Æ()
+        public void å­˜åœ¨ã—ãªã„å’Œæš¦ãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã¯MinDateãŒæŒ‡å®šã•ã‚Œã‚‹ã“ã¨()
         {
-            var eraDate = "ƒlƒI3”N1Œ1“ú";
+            var eraDate = "ãƒã‚ª3å¹´1æœˆ1æ—¥";
             var res = _ntaTopicsService.EraToDate(eraDate);
             var expected = DateTime.MinValue;
             Assert.Equal(expected, res);
         }
 
         [Fact]
-        public void ƒVƒXƒeƒ€‚ª”F¯‚Å‚«‚È‚¢˜a—ï‚ªw’è‚³‚ê‚½ê‡‚ÍMinDate‚ªw’è‚³‚ê‚é‚±‚Æ()
+        public void ã‚·ã‚¹ãƒ†ãƒ ãŒèªè­˜ã§ããªã„å’Œæš¦ãŒæŒ‡å®šã•ã‚ŒãŸå ´åˆã¯MinDateãŒæŒ‡å®šã•ã‚Œã‚‹ã“ã¨()
         {
-            var eraDate = "‘å‰»Œ³”N7Œ30“ú";
+            var eraDate = "å¤§åŒ–å…ƒå¹´7æœˆ30æ—¥";
             var res = _ntaTopicsService.EraToDate(eraDate);
             var expected = DateTime.MinValue;
             Assert.Equal(expected, res);
         }
 
         [Fact]
-        public void ƒgƒsƒbƒNs“à‚É•ÏŠ·‚Å‚«‚éî•ñ‚ª‘¶İ‚µ‚È‚¢ê‡‚Í‚»‚Ìs‚ÍRSS‚Éo—Í‚³‚ê‚È‚¢‚±‚Æ()
+        public void ãƒˆãƒ”ãƒƒã‚¯è¡Œå†…ã«å¤‰æ›ã§ãã‚‹æƒ…å ±ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯ãã®è¡Œã¯RSSã«å‡ºåŠ›ã•ã‚Œãªã„ã“ã¨()
         {
 
             var html = File.ReadAllText("./Resources/failed-row.html", System.Text.Encoding.UTF8);

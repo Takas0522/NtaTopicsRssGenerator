@@ -20,7 +20,7 @@ namespace NtaTopicsRssGenerator.Test
         }
 
         [Fact]
-        public void Topicsƒf[ƒ^‚©‚çRSS‚ª³‚µ‚­ì¬‚³‚ê‚é‚±‚Æ()
+        public void Topicsãƒ‡ãƒ¼ã‚¿ã‹ã‚‰RSSãŒæ­£ã—ãä½œæˆã•ã‚Œã‚‹ã“ã¨()
         {
             var html = File.ReadAllText("./Resources/test-resource.html", System.Text.Encoding.UTF8);
             var parser = new HtmlParser();
@@ -31,7 +31,7 @@ namespace NtaTopicsRssGenerator.Test
             var rssData = NtaTopicsService.GenerateRssFeedData(resData);
 
             // Title
-            Assert.Equal("‘Å’¡ƒgƒsƒbƒNˆê——RSS(”ñŒö®)", rssData.Feed.Title.Text.ToString());
+            Assert.Equal("å›½ç¨åºãƒˆãƒ”ãƒƒã‚¯ä¸€è¦§RSS(éå…¬å¼)", rssData.Feed.Title.Text.ToString());
 
             // Author
             Assert.Equal("DevTakas", rssData.Feed.Authors.First().Name);
@@ -43,25 +43,25 @@ namespace NtaTopicsRssGenerator.Test
             // title
             var title = resData.First().Title;
             var isTitleExists = rssData.Feed.Items.Where(w => w.Title.Text == title).Any();
-            Assert.True(isTitleExists, "ƒAƒCƒeƒ€‚Ìtitle‚Íƒf[ƒ^‚Ìtitle€–Ú‚Æˆê’v‚·‚é‚±‚Æ");
+            Assert.True(isTitleExists, "ã‚¢ã‚¤ãƒ†ãƒ ã®titleã¯ãƒ‡ãƒ¼ã‚¿ã®titleé …ç›®ã¨ä¸€è‡´ã™ã‚‹ã“ã¨");
 
             // topicpage
             var link = resData.First().TopicPage;
             var isTopicPageExists = rssData.Feed.Items.Where(w => w.Links.First().Uri == link).Any();
-            Assert.True(isTopicPageExists, "ƒAƒCƒeƒ€‚ÌitemAltenateLink‚Íƒf[ƒ^‚ÌTopicPage€–Ú‚Æˆê’v‚·‚é‚±‚Æ");
+            Assert.True(isTopicPageExists, "ã‚¢ã‚¤ãƒ†ãƒ ã®itemAltenateLinkã¯ãƒ‡ãƒ¼ã‚¿ã®TopicPageé …ç›®ã¨ä¸€è‡´ã™ã‚‹ã“ã¨");
 
             var id = resData.First().Id;
             var isIdExists = rssData.Feed.Items.Where(w => w.Id == id).Any();
-            Assert.True(isIdExists, "ƒAƒCƒeƒ€‚Ìid‚Íƒf[ƒ^‚ÌId€–Ú‚Æˆê’v‚·‚é‚±‚Æ");
+            Assert.True(isIdExists, "ã‚¢ã‚¤ãƒ†ãƒ ã®idã¯ãƒ‡ãƒ¼ã‚¿ã®Idé …ç›®ã¨ä¸€è‡´ã™ã‚‹ã“ã¨");
 
             var lastUpdateDate = resData.First().PublishDate;
             var isLastUpdateDateExists = rssData.Feed.Items.Where(w => w.LastUpdatedTime == lastUpdateDate).Any();
-            Assert.True(isLastUpdateDateExists, "ƒAƒCƒeƒ€‚ÌlastUpdatedTime‚Íƒf[ƒ^‚ÌPublishDate€–Ú‚Æˆê’v‚·‚é‚±‚Æ");
+            Assert.True(isLastUpdateDateExists, "ã‚¢ã‚¤ãƒ†ãƒ ã®lastUpdatedTimeã¯ãƒ‡ãƒ¼ã‚¿ã®PublishDateé …ç›®ã¨ä¸€è‡´ã™ã‚‹ã“ã¨");
         }
 
 
         [Fact]
-        public void ƒf[ƒ^‚Ì‘”‚ª20Œ‚É–‚½‚È‚¢ê‡‚Í‚»‚ÌŒ”‚Ìƒf[ƒ^‚ª•\¦‚³‚ê‚é‚±‚Æ()
+        public void ãƒ‡ãƒ¼ã‚¿ã®ç·æ•°ãŒ20ä»¶ã«æº€ãŸãªã„å ´åˆã¯ãã®ä»¶æ•°ã®ãƒ‡ãƒ¼ã‚¿ãŒè¡¨ç¤ºã•ã‚Œã‚‹ã“ã¨()
         {
             var data = new List<NtaTopic> {
                 new NtaTopic { Id = "1", PublishDate = DateTime.Now, Title = "a", TopicPage = null },
