@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+env:
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'src'
+  DOTNET_VERSION: '6.0.x'
+
 jobs:
   build-and-deploy:
     runs-on: windows-latest
