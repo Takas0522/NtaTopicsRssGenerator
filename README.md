@@ -29,3 +29,4 @@ RSSのXMLは<s>[こちら]()</s>（準備中）に格納しています。
 * NTA_ENDPOINT: 国税庁のトピックス一覧のエンドポイントを設定します※Origin部分除く（既定値：/information/news/index.htm）
 * CONTAINER_NAME: Azure BLOB Storageの格納するコンテナ名を設定します（既定値：rss-feed）
 * BLOB_NAME: 格納するRSS XMLのファイル名を設定します（既定値：rss.xml）
+* BLOB_ENDPOINT: BLOBリソースのURLです。デバッグ時は不要です。
