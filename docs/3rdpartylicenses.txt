@@ -1,0 +1,103 @@
+####################################################################################################
+Package:AngleSharp
+Version:1.0.7
+project URL:https://anglesharp.github.io/
+Description:AngleSharp is the ultimate angle brackets parser library. It parses HTML5, CSS3, and XML to construct a DOM based on the official W3C specification.
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:Azure.Storage.Blobs
+Version:12.19.1
+project URL:https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.19.1/sdk/storage/Azure.Storage.Blobs/README.md
+Description:This client library enables working with the Microsoft Azure Storage Blob service for storing binary and text data.
+      For this release see notes - https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/storage/Azure.Storage.Blobs/README.md and https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/storage/Azure.Storage.Blobs/CHANGELOG.md
+      in addition to the breaking changes https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/storage/Azure.Storage.Blobs/BreakingChanges.txt
+      Microsoft Azure Storage quickstarts and tutorials - https://docs.microsoft.com/en-us/azure/storage/
+      Microsoft Azure Storage REST API Reference - https://docs.microsoft.com/en-us/rest/api/storageservices/
+      REST API Reference for Blob Service - https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:coverlet.collector
+Version:3.1.2
+project URL:https://github.com/coverlet-coverage/coverlet
+Description:Coverlet is a cross platform code coverage library for .NET, with support for line, branch and method coverage.
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:Microsoft.Azure.Functions.Extensions
+Version:1.1.0
+project URL:http://go.microsoft.com/fwlink/?LinkID=320972
+Description:Provides extensions to work with Azure Functions features.
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:Microsoft.Extensions.Azure
+Version:1.7.1
+project URL:https://github.com/Azure/azure-sdk-for-net/blob/Microsoft.Extensions.Azure_1.7.1/sdk/extensions/Microsoft.Extensions.Azure/README.md
+Description:Azure Client SDK integration with Microsoft.Extensions libraries
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:Microsoft.Extensions.Configuration
+Version:6.0.0
+project URL:https://dot.net/
+Description:Implementation of key-value pair based configuration for Microsoft.Extensions.Configuration. Includes the memory configuration provider.
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:Microsoft.NET.Sdk.Functions
+Version:4.2.0
+project URL:https://github.com/Azure/azure-functions-vs-build-sdk
+Description:Build SDK for Azure Functions
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:Microsoft.NET.Test.Sdk
+Version:17.1.0
+project URL:https://github.com/microsoft/vstest/
+Description:The MSbuild targets and properties for building .NET test projects.
+licenseUrl:https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/17.1.0/License
+license Type:LICENSE_NET.txt
+
+####################################################################################################
+Package:PrivateProxy
+Version:1.0.1
+project URL:https://github.com/Cysharp/PrivateProxy
+Description:PrivateProxy SourceGenerator.
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:System.ServiceModel.Syndication
+Version:8.0.0
+project URL:https://dot.net/
+Description:Provides classes related to service model syndication.
+licenseUrl:https://licenses.nuget.org/MIT
+license Type:MIT
+
+####################################################################################################
+Package:xunit
+Version:2.6.5
+project URL:
+Description:xUnit.net is a developer testing framework, built to support Test Driven Development, with a design goal of extreme simplicity and alignment with framework features.
+
+Installing this package installs xunit.core, xunit.assert, and xunit.analyzers.
+licenseUrl:https://licenses.nuget.org/Apache-2.0
+license Type:Apache-2.0
+
+####################################################################################################
+Package:xunit.runner.visualstudio
+Version:2.5.6
+project URL:
+Description:Visual Studio 2022+ Test Explorer runner for the xUnit.net framework. Capable of running xUnit.net v1.9.2 and v2.0+ tests. Supports .NET 4.6.2 or later, and .NET 6 or later.
+licenseUrl:https://licenses.nuget.org/Apache-2.0
+license Type:Apache-2.0
+
